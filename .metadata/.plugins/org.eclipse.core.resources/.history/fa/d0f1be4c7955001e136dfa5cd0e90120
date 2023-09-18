@@ -1,0 +1,86 @@
+package SistemaDeVendasDeCachorroQuenteUFC;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		CachorroQuente cachorroquente = null;
+		Queijo queijo = null;
+		Proteina proteina = null;
+		Adicional adicional = null;
+		Bebida bebida = null;
+		
+		while(true) {
+			System.out.println("Seja bem-vindo à barraquinha de cachorro-quente da UFC!");
+            System.out.println("1. Realizar uma nova venda");
+            System.out.println("2. Mostrar relatórios");
+            System.out.println("3. Sair");
+
+			int escolha;
+			escolha = scanner.nextInt();
+			
+			switch(escolha) {
+			
+			case 1: 
+			
+			System.out.println("Digite o nome do aluno");
+			String nomedoaluno;
+			nomedoaluno = scanner.next();
+			
+			System.out.println("Digite a matrícula atrelada ao aluno");
+			int matricula;
+			matricula = scanner.nextInt();
+			
+			Aluno aluno = new Aluno(nomedoaluno, matricula);
+			
+			
+			Utilidades.mostrarProteinas();
+			int opcao = Utilidades.retornarInteiro();
+			proteina = new Proteina(Utilidades.retornarProteina(opcao));
+		
+		
+			Utilidades.mostrarQueijos();
+			opcao =  Utilidades.retornarInteiro();
+			queijo = new Queijo(Utilidades.retornarQueijo(opcao));
+			
+		
+			Utilidades.mostrarAdicionais();
+			adicional = new Adicional(Utilidades.retornaradicionais());
+			
+			
+			Utilidades.mostrarBebidas();
+			opcao = Utilidades.retornarInteiro();
+			bebida = new Bebida(Utilidades.retornarBebida(opcao));
+			
+			
+			
+			
+		
+			
+			case 2:
+				break;
+				
+			case 3:
+				System.out.println("Obrigado por utilizar o sistema! Tchauzinho!");
+				scanner.close();
+				System.exit(0);
+				
+			default:
+				System.out.println("Escolha inválida!");
+				
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,114 @@
+package SistemaDeVendasDeCachorroQuenteUFC;
+
+import java.util.Scanner;
+
+public class Main {
+
+		public static void mostrarProteinas() {
+			System.out.println("Digite a proteína que você deseja adicionar ao cachorro-quente! As opções são:");
+			System.out.println("1 - Salsicha");
+			System.out.println("2 - Linguiça");
+			System.out.println("3 - Frango");
+			System.out.println("4 - Bacon");
+		}
+	
+		public static void mostrarQueijos() {
+			System.out.println("Digite o queijo que você deseja adicionar ao seu cachorro-quente! As opções são:");
+			System.out.println("1 - Mussarela");
+			System.out.println("2 - Prato");
+			System.out.println("3 - Parmesão");
+			System.out.println("4 - Coalho");
+		}
+		
+		public static void mostrarAdicionais() {
+			System.out.println("Digite os adicionais que você deseja! OBS: Você pode escolher todos!");
+			
+			
+			
+		}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		Queijo queijo = null;
+		Proteina proteina = null;
+		
+		while(true) {
+			
+			System.out.println("Seja bem-vindo à barraquinha de cachorro-quente da UFC!");
+            System.out.println("1. Realizar uma nova venda");
+            System.out.println("2. Mostrar relatórios");
+            System.out.println("3. Sair");
+
+			int escolha;
+			escolha = scanner.nextInt();
+			
+			switch(escolha) {
+			
+			case 1: 
+			
+			System.out.println("Digite o nome do aluno");
+			String nomedoaluno;
+			nomedoaluno = scanner.next();
+			
+			System.out.println("Digite a matrícula atrelada ao aluno");
+			int matricula;
+			matricula = scanner.nextInt();
+			
+			Aluno aluno = new Aluno(nomedoaluno, matricula);
+			
+			mostrarProteinas();
+			int opcao = Utilidades.retornarInteiro();
+	
+
+			if(opcao == 1) {
+				proteina = new Proteina("Salsicha");
+			}else if(opcao == 2) {
+			    proteina = new Proteina("Linguiça");
+			}else if(opcao == 3) {
+			    proteina = new Proteina("Frango");
+			}else if(opcao == 4) {
+				proteina = new Proteina("Bacon");
+			}
+	
+			
+			
+			
+			mostrarQueijos();
+			opcao =  Utilidades.retornarInteiro();
+			
+				if(opcao == 1) {
+					 queijo = new Queijo("Mussarela");
+					
+				}else if(opcao == 2) {
+					 queijo = new Queijo("Prato");
+					
+				}else if(opcao == 3) {
+				     queijo = new Queijo("Parmesão");
+					
+				}else if(opcao == 4) {
+					 queijo = new Queijo("Coalho");
+				}
+			
+			
+			
+			
+			
+			
+			
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		scanner.close();
+	}
+
+}

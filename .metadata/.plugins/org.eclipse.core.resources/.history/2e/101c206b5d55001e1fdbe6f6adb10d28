@@ -1,0 +1,47 @@
+package SistemaDeVendasDeCachorroQuenteUFC;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			
+			System.out.println("Seja bem-vindo à barraquinha de cachorro-quente da UFC!");
+            System.out.println("1. Realizar uma nova venda");
+            System.out.println("2. Mostrar relatórios");
+            System.out.println("3. Sair");
+
+			int escolha;
+			escolha = scanner.nextInt();
+			
+			switch(escolha) {
+			
+			case 1: 
+			
+			System.out.println("Digite o nome do aluno");
+			String nomedoaluno;
+			nomedoaluno = scanner.next();
+			
+			System.out.println("Digite a matrícula atrelada ao aluno");
+			int matricula;
+			matricula = scanner.nextInt();
+			
+			Aluno aluno = new Aluno(nomedoaluno, matricula);
+			
+			
+			}
+			
+			
+			
+		}
+		
+		
+		
+		
+		scanner.close();
+	}
+
+}

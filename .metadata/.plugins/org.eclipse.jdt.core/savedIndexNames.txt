@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\fidel\Desktop\FACULDADE\2º SEMESTRE\TÉCNICAS DE PROGRAMAÇÃO\CACHORRO-QUENTE\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2801129358.index
+3019040922.index
