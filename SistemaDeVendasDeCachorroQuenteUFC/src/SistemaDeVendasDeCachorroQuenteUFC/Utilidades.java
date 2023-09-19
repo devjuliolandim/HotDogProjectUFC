@@ -21,11 +21,10 @@ public class Utilidades {
 	}
 	
 	public static void mostrarAdicionais() {
-		System.out.println("Digite os adicionais que você deseja! OBS: Você pode escolher mais de um!");
 		System.out.println("1 - Maionese");
-		System.out.println("1 - Ketchup");
-		System.out.println("1 - Ovo");
-		System.out.println("1 - Batata Palha");
+		System.out.println("2 - Ketchup");
+		System.out.println("3 - Ovo");
+		System.out.println("4 - Batata Palha");
 		
 	}
 	
@@ -130,21 +129,27 @@ public class Utilidades {
 	
 	
 	
-	public static String funcaoDeAdicionais(int opcao) {
+	public static Adicional funcaoDeAdicionais() {
 		Scanner scanner = new Scanner(System.in);
-		String adicional = null;
+		Adicional adicional = new Adicional("nada");
 		
-		if(opcao == 1) {
-			adicional = "Ketchup";
+		
+		mostrarAdicionais();
+		int option = retornarInteiro();
+		
+		
+		
+		if(option == 1) {
+			adicional = new Adicional("Maionese");
 			
-		}else if(opcao == 2) {
-			adicional = "Maionese";
+		}else if(option == 2) {
+			adicional = new Adicional("Ketchup");
 			
-		}else if(opcao == 3) {
-			adicional = "Ovo";
+		}else if(option == 3) {
+			adicional = new Adicional("Ovo");
 			
-		}else if(opcao == 4) {
-			adicional = "Batata Palha";
+		}else if(option == 4) {
+			adicional = new Adicional("Batata Palha");
 			
 		}
 		
@@ -153,67 +158,8 @@ public class Utilidades {
 		return adicional;
 	}
 	
-	public static String[] retornaradicionais() {
-		Scanner scanner = new Scanner(System.in);
-		
-		int opcao = 0;
-		
-		
-		
-		
-		System.out.println("Quantos adicionais você deseja adicionar ao seu cachorro quente? Você precisa adicionar pelo menos um e no máximo quatro");
-		int quantidade = 0;
-		do {
-			quantidade = scanner.nextInt();
-			if(quantidade > 4 || quantidade < 1);{
-				System.out.println("Por favor digite uma opção válida.");
-			}
-		}while(quantidade> 4 || quantidade < 1);
-		
-		String[] adicionais = new String[quantidade];
-		
-		adicionais[quantidade] = null;
-		
-		if(quantidade == 4) {
-			
-			adicionais[0] = "Ketchup, ";
-			adicionais[1] = "Maionese, ";
-			adicionais[2] = "Ovo e ";
-			adicionais[3] = "Batata Palha";
-		}else {
-			
-			for (int i = 0; i < quantidade; i++) {
-				System.out.println("Digite a opção do " + (i+1) + "º adicional");
-				System.out.println("1 - Ketchup");
-				System.out.println("2 - Maionese");
-				System.out.println("3 - Ovo");
-				System.out.println("4 - Batata Palha");
-				
-				opcao = retornarInteiro();
-					
-				switch(opcao) {
-				case 1:
-					adicionais[i] = "Ketchup";
-				
-				case 2:
-					adicionais[i] = "Maionese";
-				
-				case 3:
-					adicionais[i] = "Ovo";
-					
-				case 4:
-					adicionais[i] = "Batata Palha";
-				}		
-			
-			}
-				
-		}
-		
-	
-		return adicionais;
-	}
-	
-	
+
+
 	
 	
 }

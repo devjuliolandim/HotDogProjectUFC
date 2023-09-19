@@ -10,17 +10,25 @@ public class CachorroQuente {
 		this.queijo = queijo;
 		this.adicional = adicional;
 	}
-
+	
+	
+	public Adicional getAdicionalOf(int index) {
+		return adicional[index];
+	}
+	
+	
+	
 	public Adicional[] getAdicional() {
 		return adicional;
 	}
 
-	public void setAdicional(Adicional adicional[]) {
+	public void setAdicional(Adicional[] adicional) {
 
 	}
 
 	public Proteina getProteina() {
 		return proteina;
+		//return proteina.
 	}
 
 	public void setProteina(Proteina proteina) {

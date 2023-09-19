@@ -1,0 +1,47 @@
+package SistemaDeVendasDeCachorroQuenteUFC;
+
+public class CachorroQuente {
+	private Proteina proteina;
+	private Queijo queijo;
+	private Adicional[] adicional;
+
+	public CachorroQuente(Proteina proteina, Queijo queijo, Adicional[] adicional) {
+		this.proteina = proteina;
+		this.queijo = queijo;
+		this.adicional = adicional;
+	}
+	
+	public CachorroQuente(){}
+
+	public Adicional getAdicionalOf(int index) {
+		return adicional[index];
+	}
+	
+	
+	
+	public Adicional[] getAdicional() {
+		return adicional;
+	}
+
+	public void setAdicional(Adicional[] adicional) {
+
+	}
+
+	public Proteina getProteina() {
+		return proteina;
+		//return proteina.
+	}
+
+	public void setProteina(Proteina proteina) {
+		this.proteina = proteina;
+	}
+
+	public Queijo getQueijo() {
+		return queijo;
+	}
+
+	public void setQueijo(Queijo queijo) {
+		this.queijo = queijo;
+	}
+
+}

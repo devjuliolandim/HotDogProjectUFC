@@ -1,0 +1,21 @@
+package SistemaDeVendasDeCachorroQuenteUFC;
+
+public class Proteina {
+
+	private String Nome;
+
+	public Proteina(String nome) {
+		this.Nome = nome;
+	}
+
+	public String getNome() {
+		return this.Nome;
+	}
+
+	public void setNome(String nome) {
+		
+		this.Nome = nome.toUpperCase();
+	}
+	
+	
+}

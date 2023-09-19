@@ -2,17 +2,17 @@ package SistemaDeVendasDeCachorroQuenteUFC;
 
 public class Adicional {
 
-	private String[] Nome;
+	private String Nome;
 
-	public Adicional(String[] nome) {
-		Nome = nome;
+	public Adicional(String Nome) {
+		this.Nome = Nome;
 	}
 
-	public String[] getNome() {
+	public String getNome() {
 		return Nome;
 	}
 
-	public void setNome(String[] nome) {
+	public void setNome(String nome) {
 		Nome = nome;
 	}
 	

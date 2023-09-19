@@ -31,6 +31,7 @@ public class Venda {
 		this.aluno = aluno;
 	}
 
+	
 
 	public CachorroQuente getCachorroquente() {
 		return cachorroquente;

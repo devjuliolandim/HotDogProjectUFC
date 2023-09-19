@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		int VendaMaxima = 100;
+		int VendaMaxima = 100000;
 
 		CachorroQuente cachorroquente = null;
 		Queijo queijo = null;
@@ -48,8 +48,37 @@ public class Main {
 				opcao = Utilidades.retornarInteiro();
 				queijo = new Queijo(Utilidades.retornarQueijo(opcao));
 
-				Utilidades.mostrarAdicionais();
-				Adicional[] adicional = new Adicional(Utilidades.retornaradicionais());
+				System.out.println("Digite quantos adicionais você deseja!");
+				opcao = Utilidades.retornarInteiro();
+
+				Adicional[] adicional = new Adicional[opcao];
+
+				if (opcao == 1) {
+
+					adicional[0] = Utilidades.funcaoDeAdicionais();
+
+				} else if (opcao == 2) {
+
+					for (int i = 0; i < 2; i++) {
+
+						adicional[i] = Utilidades.funcaoDeAdicionais();
+
+					}
+				} else if (opcao == 3) {
+
+					for (int i = 0; i < 3; i++) {
+
+						adicional[i] = Utilidades.funcaoDeAdicionais();
+
+					}
+				} else if (opcao == 4) {
+
+					for (int i = 0; i < 4; i++) {
+
+						adicional[i] = Utilidades.funcaoDeAdicionais();
+					}
+
+				}
 
 				Utilidades.mostrarBebidas();
 				opcao = Utilidades.retornarInteiro();
@@ -60,6 +89,7 @@ public class Main {
 				vendas[NumVendas] = venda;
 				NumVendas++;
 
+				break;
 			case 2:
 
 				if (NumVendas == 0) {
@@ -70,14 +100,23 @@ public class Main {
 					System.out.println("Relatório de Vendas:");
 
 					for (int i = 0; i < NumVendas; i++) {
-						System.out.println("Venda " + (1 + i));
-						System.out.println("Aluno: " + vendas[i].getAluno().getNome());
-						System.out.println("Matricula: " + vendas[i].getAluno().getMatricula());
-						System.out.println("Proteína: " + vendas[i].getCachorroquente().getProteina());
-						System.out.println("Queijo: " + vendas[i].getCachorroquente().getQueijo());
-						System.out.println("Adicionais: " + vendas[i].getCachorroquente().getAdicional() + ", ");
-						System.out.println("Bebida: " + vendas[i].getBebida().getNome());
-						System.out.println("\n\n");
+						String adicionais = "";
+						int a = vendas[i].getCachorroquente().getAdicional().length;
+						for (int j = 0; j < a; j++) {
+							adicionais += " / " + vendas[i].getCachorroquente().getAdicionalOf(j).getNome();
+						}
+
+						if (i == (NumVendas - 1)) {
+							System.out.println("Venda " + (1 + i));
+							System.out.println("Aluno: " + vendas[i].getAluno().getNome());
+							System.out.println("Matricula: " + vendas[i].getAluno().getMatricula());
+							System.out.println("Proteína: " + vendas[i].getCachorroquente().getProteina().getNome());
+							System.out.println("Queijo: " + vendas[i].getCachorroquente().getQueijo().getNome());
+							System.out.println("Adicionais: " + adicionais + ", ");
+							System.out.println("Bebida: " + vendas[i].getBebida().getNome());
+							System.out.println("\n\n");
+
+						}
 					}
 
 				}
